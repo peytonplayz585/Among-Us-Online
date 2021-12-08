@@ -1,12 +1,17 @@
 <!doctype html>
 <html>
 <head>
-  <title>51Sec Online Page Sandbox</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
-  <base target="_blank">
-  <style>
+<title>Peyton’s Website Unblocker</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+<base target="_blank">
+<style>
     body {
+        background-image: url("https://wallpaperaccess.com/full/86289.jpg");
+ background-repeat:no-repeat;
+ background-size:cover;
+} 
+{
       padding: 0 0.5em;
     }
     .box {
@@ -25,20 +30,20 @@
     #list a {
       margin: 1em;
     }
-  </style>
- 
-  
+
+
+</style>
 </head>
 <body>
   
   <div class="box">
-    <input id="txtURL" type="text" value="www.google.com" autofocus>
+    <input id="txtURL" placeholder="Enter Link Here Then Press Unblock Website" type="text" value="" autofocus>
   </div>
   <div class="box">
-    <button id="btnGo">Lets Go</button>
+    <button id="btnGo">Unblock Website</button>
   </div>
   <div class="box">
-    <span>Switch Line:</span>
+    <span>Switch Mode:</span>
     <select id="selNode"></select>
   </div>
   <div class="box" id="list">
@@ -48,17 +53,23 @@
     const PAGE_CONF_SET = 110
     const PAGE_CONF_GET = 111
 
+
     const SW_CONF_RETURN = 112
     const SW_CONF_CHANGE = 113
+
 
     const PAGE_READY_CHECK = 200
     const SW_READY = 201
 
+
     const sw = navigator.serviceWorker
+
+
 
 
     sw.addEventListener('message', onSwMsg)
     sendMsgToSw(PAGE_READY_CHECK)
+
 
     btnGo.onclick = function() {
       const text = txtURL.value.trim()
@@ -75,8 +86,11 @@
     txtURL.setSelectionRange(0, txtURL.value.length)
 
 
+
+
     function onSwMsg(e) {
       const [cmd, msg] = e.data
+
 
       switch (cmd) {
       case SW_CONF_RETURN:
@@ -84,10 +98,12 @@
         showConf()
         break
 
+
       case SW_CONF_CHANGE:
         conf = msg
         updateSelected()
         break
+
 
       case SW_READY:
         console.log('sw ready')
@@ -97,9 +113,11 @@
       }
     }
 
+
     function onSwFail(err) {
       txtURL.value = err
     }
+
 
     selNode.onchange = function() {
       const item = this.options[this.selectedIndex]
@@ -107,6 +125,7 @@
       conf.node_default = node
       sendMsgToSw(PAGE_CONF_SET, conf)
     }
+
 
     function sendMsgToSw(cmd, val) {
       const ctl = sw.controller
@@ -117,24 +136,21 @@
       ctl.postMessage([cmd, val])
     }
 
+
     const SITE_LIST = [
-      ['51secblog', 'blog.51sec.org/'],
-      ['51secwww', 'www.51sec.org/'],
-      ['itprosec', 'itprosec.com/community/'],
-      ['nav', 'nav.51sec.org/'],
-      ['sites', 'sites.51sec.org/'],
-      ['google', ''],
+      ['google', 'www.google.com/'],
       ['youtube', 'www.youtube.com/c/NetSec'],
-      ['twitter', 'twitter.com/51netsec'],
-      ['flickr', ''],
-      ['quora', 'www.quora.com/topic/JavaScript-programming-language'],
+      ['twitter', 'www.twitter.com/'],
+      ['flickr', 'www.flickr.com/'],
+      ['quora', 'www.quora.com/'],
       ['twitch', 'www.twitch.tv/'],
-      ['reddit', ''],
-      ['wiki', 'zh.wikipedia.org/'],
+      ['reddit', 'www.reddit.com/'],
+      ['wiki', 'www.wikipedia.org/'],
       ['gist', 'gist.github.com/'],
-      ['facebook', 'www.facebook.com/51sec'],
-      ['blogger', ''],
+      ['facebook', 'www.facebook.com/'],
+      ['blogger', 'www.blogger.com/'],
     ]
+
 
     function showIcons() {
       list.innerHTML = SITE_LIST.map(v => {
@@ -146,6 +162,7 @@
       }).join('')
     }
 
+
     function addNodeItem(id, text) {
       const optEl = document.createElement('option')
       optEl.id = '--' + id
@@ -153,6 +170,7 @@
       optEl.value = id
       selNode.appendChild(optEl)
     }
+
 
     function updateSelected() {
       const id = conf.node_default
@@ -163,6 +181,7 @@
         console.warn('unknown node:', id)
       }
     }
+
 
     function showConf() {
       for (const [id, node] of Object.entries(conf.node_map)) {
@@ -176,20 +195,27 @@
   </div>
   <BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR> <BR><BR>
 
-    <footer>
+
+ <footer><font color=”00FF00”>
     <div><center><table><tbody><tr>
-    <td><div size="1" face="arial" color="blue" style="font-family:'Courier New'"><center>Learning, Sharing, Creating.<br>  
-    Copyright ©2021 <a href="https://www.51sec.org" target="_blank">51Sec</a>.   All Rights Reserved. </center></div><br> 
+    <td><div size="1" face="arial" color="blue" style="font-family:'Courier New'"><center>Helping, Teaching, and Creating
+</font>
+</font>
+<br>  
+    Copyright ©2022 <a href="https://www.peytonscarborough01" target="_blank">PeytonScarborough01.</a>   All Rights Reserved. </center></div><br> 
     </td>
     <td>  <div><center>
-    <a href="https://clustrmaps.com/site/1bkk4" title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=kSadNDDDxsuK3fRZfb8z-UOi4XgJ8Js22-f-icdng6k&cl=ffffff"></a>
+    <a href="https://clustrmaps.com/site/1bkk4" title="Visit tracker"><img src="//www.png.pngtree.com/png-clipart/20200312/ourlarge/pngtree-maps-icon-design-png-image_2156485.jpg"></a>
   </center></div></td>
     </tr></tbody></table></center></div>
+
+
 
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5660349373091698"
      crossorigin="anonymous">
 </script>  
+
 
       
     </footer>
