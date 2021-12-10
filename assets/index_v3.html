@@ -133,28 +133,7 @@
       ctl.postMessage([cmd, val])
     }
 
-
-    const SITE_LIST = [
-      ['google', 'google.com/'],
-      ['youtube', 'youtube.com/'],
-      ['twitter', 'twitter.com/'],
-      ['flickr', 'flickr.com/'],
-      ['quora', 'quora.com/'],
-      ['twitch', 'twitch.tv/'],
-      ['reddit', 'reddit.com/'],
-      ['wiki', 'wikipedia.org/'],
-      ['stadia', 'stadia.google.com/'],
-      ['facebook', 'facebook.com/'],
-      ['blogger', 'blogger.com/'],
-      ['now', 'now.gg/'],
-      ['tiktok', 'tiktok.com'],
-      ['emouse', 'emupedia.net/beta/emuos/'],
-      ['slither', 'slither.io'],
-      ['minecraft', 'webclient.prismarine.js.org/'],
-    ]
-
-
-    function showIcons() {
+      function showIcons() {
       list.innerHTML = SITE_LIST.map(v => {
         let [id, url] = v
         url = url || `${id}.com/`
