@@ -12,24 +12,10 @@ jsproxy_config({
 
   // Node configuration
   node_map: {
-   'mysite': {
+   'Peytons Website Unblocker': {
       label: 'Local',
       lines: {
         [location.host]: 1,
-      }
-    },
-    'demo-hk': {
-      label: 'Demo - Hongkong',
-      lines: {
-        // hosts: weights
-        'node-aliyun-hk-1.etherdream.com:8443': 1,
-        'node-aliyun-hk-2.etherdream.com:8443': 2,
-      }
-    },
-    'demo-sg': {
-      label: 'Demo - Singapore',
-      lines: {
-        'node-aliyun-sg.etherdream.com:8443': 1,
       }
     },
     // This node is used to load a large volume of static resources
@@ -79,7 +65,7 @@ jsproxy_config({
   /**
    * Customize the HTML of the injected page
    */
-  inject_html: '<!Peytons Website Unblocker>',
+  inject_html: '<Peytons Website Unblocker>',
 
   /**
    * URL Custom Processing (In Design)
