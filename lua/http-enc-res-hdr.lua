@@ -1,12 +1,12 @@
--- 功能：编码 HTTP 返回头
--- 阶段：header_filter_by_lua
--- 备注：
--- aceh = HTTP 返回头的 access-control-expose-headers 字段
+--Functions: encoding HTTP returns
+-- Stage：header_filter_by_lua
+-- Remarks：
+-- aceh = HTTP Returning to the Head of access-control-expose-headers Field
 
--- 无论浏览器是否支持，aceh 始终包含 *
+--Aceh always contains * regardless of browser support
 local expose = '*'
 
--- 该值为 true 表示浏览器不支持 aceh: *，需返回详细的头部列表
+-This value is true to indicate that the browser does not support aceh: * and returns a detailed list of heads
 local detail = ngx.ctx._acehOld
 
 
@@ -23,7 +23,7 @@ local function flushHdr()
     if status ~= 200 then
       expose = expose .. ',--s'
     end
-    -- 该字段不在 aceh 中，如果浏览器能读取到，说明支持 * 通配
+    - This field is not in aceh and supports * wildcards if the browser can read to
     ngx.header['--t'] = '1'
   end
 
@@ -32,14 +32,14 @@ local function flushHdr()
 
   local status = ngx.status
 
-  -- 前端优先使用该字段作为状态码
+  --The front end preferentially uses the field as the status code
   if status ~= 200 then
     ngx.header['--s'] = status
   end
 
-  -- 保留原始状态码，便于控制台调试
-  -- 例如 404 显示红色，如果统一设置成 200 则没有颜色区分
-  -- 需要转义 30X 重定向，否则不符合 cors 标准
+ - Keep the original status code for console debugging
+- For example, 404 displays red, and if set to 200 uniformly, there is no color distinction
+- Need to escape 30X redirection or not meet cors standards
   if
     status == 301 or
     status == 302 or
@@ -77,7 +77,7 @@ local function nodeSwitched()
     return false
   end
 
-  -- 小于 400KB 的资源不走加速
+  -- Resources less than 20KB do not accelerate
   local resLenNum = tonumber(resLenStr)
   if resLenNum == nil or resLenNum < 1000 * 400 then
     return false
@@ -107,7 +107,7 @@ local function nodeSwitched()
   return true
 end
 
--- 节点切换功能，目前还在测试中（demo 中已开启）
+-- Node switching, currently in test (opened in demo)
 -- if nodeSwitched() then
 --  return
 -- end
@@ -116,15 +116,15 @@ end
 local h, err = ngx.resp.get_headers()
 for k, v in pairs(h) do
   if
-    -- 这些头有特殊意义，需要转义 --
+    These heads have special significance and need to be escaped --
     k == 'access-control-allow-origin' or
     k == 'access-control-expose-headers' or
     k == 'location' or
     k == 'set-cookie'
   then
     if type(v) == 'table' then
-      -- 重复的字段，例如 Set-Cookie
-      -- 转换成 1-Set-Cookie, 2-Set-Cookie, ...
+      -Repetitive fields, such as Set-Cookie
+-- Converted to 1-Set-Cookie, 2-Set-Cookie, ...
       for i = 1, #v do
         addHdr(i .. '-' .. k, v[i])
       end
@@ -134,7 +134,7 @@ for k, v in pairs(h) do
     ngx.header[k] = nil
 
   elseif detail and
-    -- 非简单头无法被 fetch 读取，需添加到 aceh 列表 --
+    - Non-simple headers cannot be read by fetch and need to be added to the aceh list --
     -- https://developer.mozilla.org/en-US/docs/Glossary/Simple_response_header
     k ~= 'cache-control' and
     k ~= 'content-language' and
@@ -147,7 +147,7 @@ for k, v in pairs(h) do
   end
 end
 
--- 不缓存非 GET 请求
+-- Not caching non-GET requests
 if ngx.req.get_method() ~= 'GET' then
   ngx.header['cache-control'] = 'no-cache'
 end
