@@ -53,8 +53,8 @@ jsproxy_config({
   /**
    * Default node
    */
-  node_default: 'mysite',
-  // node_default: /jsproxy-demo\.\w+$/.test(location.host) ? 'demo-hk' : 'mysite',
+  node_default: 'Peytons Website Unblocker',
+  // node_default: /jsproxy-demo\.\w+$/.test(location.host) ? 'demo-hk' : 'Peytons Website Unblocker',
 
   /**
    * Acceleration node
@@ -79,7 +79,7 @@ jsproxy_config({
   /**
    * Customize the HTML of the injected page
    */
-  inject_html: '<!-- custom html -->',
+  inject_html: '<!Peytons Website Unblocker>',
 
   /**
    * URL Custom Processing (In Design)
@@ -89,10 +89,10 @@ jsproxy_config({
       replace: 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png'
     },
     'https://www.pornhub.com/': {
-      redir: 'https://blog.51sec.org/'
+      redir: 'https://www.pornhub.com/'
     },
     'http://haha.com/': {
-      content: 'Hello World'
+      content: 'Ha Ha very Funny'
     },
   }
 })
