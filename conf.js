@@ -17,14 +17,6 @@ jsproxy_config({
       lines: {
         [location.host]: 1,
       }
-    },
-    // This node is used to load a large volume of static resources
-    'cfworker': {
-      label: '',
-      hidden: true,
-      lines: {
-        // Fee Edition (High Weight)
-        'node-cfworker-2.etherdream.com': 4,
 
         // Free Edition (Low Weight, Cost Sharing)
 //100,000 free requests per account per day, with frequency restrictions
