@@ -1,6 +1,6 @@
--- 功能：还原 WebSocket 的 HTTP 请求头
--- 阶段：access_by_lua
--- 备注：JS 无法设置 ws 的头部，因此信息存储于 query
+--Functions: Restore the HTTP request header for WebSocket
+-- Phase: access_by_lua
+- Note: JS cannot set the head of ws, so information is stored in query
 
 local query, err = ngx.req.get_uri_args()
 
