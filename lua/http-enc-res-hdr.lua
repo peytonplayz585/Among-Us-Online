@@ -77,7 +77,7 @@ local function nodeSwitched()
     return false
   end
 
-  -- Resources less than 20KB do not accelerate
+  -- Resources less than 2KB do not accelerate
   local resLenNum = tonumber(resLenStr)
   if resLenNum == nil or resLenNum < 1000 * 400 then
     return false
