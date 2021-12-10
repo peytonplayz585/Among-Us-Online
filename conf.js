@@ -69,7 +69,7 @@ jsproxy_config({
     'https://www.pornhub.com/': {
       redir: 'https://www.pornhub.com/'
     },
-    'http://haha.com/': {
+    'https://haha.com/': {
       content: 'Ha Ha very Funny Tommy'
     },
   }
