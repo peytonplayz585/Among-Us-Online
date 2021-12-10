@@ -2,7 +2,7 @@
 -- ngx.arg[2] => eof
 
 
--- 大文件只返回首块 hash（用户从廉价带宽获取内容）
+- Large files return only the first hash (users get content from cheap bandwidth)
 if ngx.ctx._switched then
   local chunk = ngx.arg[1]
   ngx.arg[1] = #chunk .. ',' .. ngx.crc32_long(chunk)
@@ -11,7 +11,7 @@ if ngx.ctx._switched then
 end
 
 
--- 计算 HTTP 返回数据的 hash（用于统计）
+-Calculates the hash (for statistics) of HTTP-returned data
 if ngx.ctx._sha256 == nil then
   local resty_sha256 = require 'resty.sha256'
   ngx.ctx._sha256 = resty_sha256:new()
