@@ -10,9 +10,6 @@ pagead2.googlesyndication.com
 cdn.jsdelivr.net
 unpkg.com
 cdnjs.cloudflare.com
-cdn.bootcss.com
-use.fontawesome.com
-fast.fonts.net
 script.hotjar.com
 
 # github
