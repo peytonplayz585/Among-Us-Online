@@ -1,4 +1,4 @@
--- 还原 HTTP 请求头
+-- Restore the HTTP request header
 local hasRawRefer = false
 
 local hdrs = ngx.req.get_headers()
