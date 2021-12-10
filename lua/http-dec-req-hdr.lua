@@ -37,5 +37,5 @@ if not hasRawRefer then
   ngx.req.clear_header('referer')
 end
 
--- 删除 URL 的 '/http/' 前缀
+-- Deletion URL 的 '/http/' Prefixes
 ngx.var._url = ngx.var.request_uri:sub(7)
