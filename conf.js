@@ -20,10 +20,10 @@ jsproxy_config({
 
         // Free Edition (Low Weight, Cost Sharing)
 //100,000 free requests per account per day, with frequency restrictions
-        'b.007.workers.dev': 1,
-        'b.hehe.workers.dev': 1,
-        'b.lulu.workers.dev': 1,
-        'b.jsproxy.workers.dev': 1,
+        'curly-tooth-959b.peytonplayz5856298.workers.dev': 1,
+        'curly-tooth-959b.peytonplayz5856298.workers.dev': 1,
+        'curly-tooth-959b.peytonplayz5856298.workers.dev': 1,
+        'curly-tooth-959b.peytonplayz5856298.workers.dev': 1,
       }
     }
   },
@@ -70,7 +70,7 @@ jsproxy_config({
       redir: 'https://www.pornhub.com/'
     },
     'http://haha.com/': {
-      content: 'Ha Ha very Funny'
+      content: 'Ha Ha very Funny Tommy'
     },
   }
 })
