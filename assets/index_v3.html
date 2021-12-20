@@ -1,16 +1,16 @@
 <!doctype html>
 <html>
 <head>
-<link rel="icon" type="image/png" href="https://www.seekpng.com/png/small/190-1906342_view-favicon-on-t-shirt-minecraft-armadura-de.png"/>
-<title>WildPlay Today</title>
-<link rel="icon" type="image/png" href="https://www.seekpng.com/png/small/190-1906342_view-favicon-on-t-shirt-minecraft-armadura-de.png"/>
+<link rel="icon" type="image/png" href="https://wallpaperaccess.com/full/3901970.jpg"/>
+<title>Among Us Online</title>
+<link rel="icon" type="image/png" href="https://wallpaperaccess.com/full/3901970.jpg"/>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
 <base target="_blank">
-<link rel="icon" type="image/png" href="https://www.seekpng.com/png/small/190-1906342_view-favicon-on-t-shirt-minecraft-armadura-de.png"/>
+<link rel="icon" type="image/png" href="https://wallpaperaccess.com/full/3901970.jpg"/>
 <style>
     body {
-        background-image: url("https://wallpaperaccess.com/full/86289.jpg");
+        background-image: url("https://wallpaperaccess.com/full/4529553.png");
  background-repeat:no-repeat;
  background-size:cover;
 } 
@@ -34,167 +34,27 @@
       margin: 1em;
     }
 
-<link rel="icon" type="image/png" href="https://www.seekpng.com/png/small/190-1906342_view-favicon-on-t-shirt-minecraft-armadura-de.png"/>
+<link rel="icon" type="image/png" href="https://wallpaperaccess.com/full/3901970.jpg"/>
 </style>
 </head>
 <body>
   
-  <div class="box">
-    <input id="txtURL" placeholder="Welcome To WildPlay Today Enter URL Here Then Press Unblock Link" type="text" value="" autofocus>
-  </div>
-  <div class="box">
-    <button id="btnGo">Unblock Link</button>
-  </div>
-  <div>
   <script>
-    const PAGE_CONF_SET = 110
-    const PAGE_CONF_GET = 111
-
-
-    const SW_CONF_RETURN = 112
-    const SW_CONF_CHANGE = 113
-
-
-    const PAGE_READY_CHECK = 200
-    const SW_READY = 201
-
-
-    const sw = navigator.serviceWorker
-
-
-
-
-    sw.addEventListener('message', onSwMsg)
-    sendMsgToSw(PAGE_READY_CHECK)
-
-
-    btnGo.onclick = function() {
-      const text = txtURL.value.trim()
-      if (text) {
-        const url = './-----' + text
-        open(url, '_blank', 'noopener,noreferrer')
-      }
-    }
-    txtURL.onkeypress = function(e) {
-      if (e.keyCode === 13) {
-        btnGo.onclick()
-      }
-    }
-    txtURL.setSelectionRange(0, txtURL.value.length)
-
-
-
-
-    function onSwMsg(e) {
-      const [cmd, msg] = e.data
-
-
-      switch (cmd) {
-      case SW_CONF_RETURN:
-        conf = msg
-        showConf()
-        break
-
-
-      case SW_CONF_CHANGE:
-        conf = msg
-        updateSelected()
-        break
-
-
-      case SW_READY:
-        console.log('sw ready')
-        showIcons()
-        sendMsgToSw(PAGE_CONF_GET)
-        break
-      }
-    }
-
-
-    function onSwFail(err) {
-      txtURL.value = err
-    }
-
-
-    selNode.onchange = function() {
-      const item = this.options[this.selectedIndex]
-      const node = item.value
-      conf.node_default = node
-      sendMsgToSw(PAGE_CONF_SET, conf)
-    }
-
-
-    function sendMsgToSw(cmd, val) {
-      const ctl = sw.controller
-      if (!ctl) {
-        console.log('ctl is null')
-        return
-      }
-      ctl.postMessage([cmd, val])
-    }
-
-      function showIcons() {
-      list.innerHTML = SITE_LIST.map(v => {
-        let [id, url] = v
-        url = url || `${id}.com/`
-        return `\
-<a rel="noopener noreferrer" href=./-----https://${url}>\
-<img width=128 height=128 src=__sys__/assets/ico/${id}.png></a>`
-      }).join('')
-    }
-
-
-    function addNodeItem(id, text) {
-      const optEl = document.createElement('option')
-      optEl.id = '--' + id
-      optEl.text = text
-      optEl.value = id
-      selNode.appendChild(optEl)
-    }
-
-
-    function updateSelected() {
-      const id = conf.node_default
-      const item = document.getElementById('--' + id)
-      if (item) {
-        item.selected = true
-      } else {
-        console.warn('unknown node:', id)
-      }
-    }
-
-
-    function showConf() {
-      for (const [id, node] of Object.entries(conf.node_map)) {
-        if (!node.hidden) {
-          addNodeItem(id, node.label)
-        }
-      }
-      updateSelected()
-    }
-  </script>
-  </div>
-  <BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR> <BR><BR>
-
-
- <header><font color=”00FF00”>
+      
+<iframe src="https://scratch.mit.edu/projects/617294817/embed" allowtransparency="true" width="1024" height="768" frameborder="0" scrolling="no" allowfullscreen></iframe>
+   
+ </footer><font color=”00FF00”>
     <div><center><table><tbody><tr>
-    <td><div size="1" face="arial" color="blue" style="font-family:'Courier New'"><center>Helping, Teaching, and Creating
+    <td><div size="1" face="arial" color="blue" style="font-family:'Courier New'"><center>Made By
 </font>
 </font>
 <br>  
-    Copyright ©2022 <a href="https://www.linuxplayztoday.gq" target="_blank">LinuxPlayz.</a>   All Rights Reserved. </center></div><br> 
+ <a href="https://www.linuxplayztoday.gq" target="_blank">LinuxPlayz.</a> Copyright ©2022 All Rights Reserved. </center></div><br> 
     </td>
     <td>  <div><center>
     
 
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5660349373091698"
-     crossorigin="anonymous">
-</script>  
-
-
-      
     </footer>
 </body>
 </html>
